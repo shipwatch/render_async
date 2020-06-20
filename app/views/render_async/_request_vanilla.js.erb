@@ -95,11 +95,11 @@
       if (currentRetryCount >= <%= retry_count %>)
         return false;
 
-      _makeRequest(currentRetryCount + 1);
+      setTimeout(() => {  _makeRequest(currentRetryCount + 1); }, 1000);
       return true;
     }
 
-    _makeRequest(1);
+    setTimeout(() => {  _makeRequest(1); }, 1000);
     return true;
   }
   <% end %>
